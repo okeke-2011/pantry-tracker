@@ -1,2 +1,0 @@
-export const SUPABASE_URL = 'https://twtpnthtxzlupwjrdlhh.supabase.co'
-export const SUPABASE_API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR3dHBudGh0eHpsdXB3anJkbGhoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjI3Mzg5ODcsImV4cCI6MjAzODMxNDk4N30.oJ6oGigh9-SGFv05wc31yhKuYcU_n87Ey1XHjKmkDcc'

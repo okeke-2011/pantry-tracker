@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import AddItemModal from "./components/AddItemModal";
 import DisplayItems from "./components/DisplayItems";
-import { createClient } from "@supabase/supabase-js";
-import { SUPABASE_API_KEY, SUPABASE_URL } from "./config/env";
+import supabase from "./config/supabaseConfig";
 import { BiSort } from "react-icons/bi";
+import OpenAiVision from "./components/OpenAiVision";
 
 interface Item {
   id: number;
@@ -15,7 +15,6 @@ interface Item {
 // DB PASSWORD: ZYHz4$4SRkM4YWY
 
 function App() {
-  const supabase = createClient(SUPABASE_URL, SUPABASE_API_KEY);
   const [items, setItems] = useState<Item[]>([]);
   const [error, setError] = useState("");
   const [orderBy, setOrderBy] = useState("created_at");
@@ -125,8 +124,10 @@ function App() {
         onPlusOne={(item) => handleUpdate(item, 1)}
         onDelete={handleDelete}
       />
-      
+
       {!error && <AddItemModal addItem={handleAdd} />}
+
+      <OpenAiVision />
     </>
   );
 }
