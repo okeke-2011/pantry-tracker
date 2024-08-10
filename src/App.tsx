@@ -5,8 +5,6 @@ import AddItemModal from "./components/AddItemModal";
 import DisplayItems from "./components/DisplayItems";
 import supabase from "./config/supabaseConfig";
 import { BiSort } from "react-icons/bi";
-import OpenAiVision from "./components/OpenAiVision";
-import Component from "./components/Component";
 
 const siteId = import.meta.env.VITE_HOTJAR_SITE_ID;
 const hotjarVersion = 6;
