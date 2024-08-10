@@ -1,3 +1,4 @@
+import Hotjar from "@hotjar/browser";
 import { useEffect, useState } from "react";
 import "./App.css";
 import AddItemModal from "./components/AddItemModal";
@@ -5,14 +6,18 @@ import DisplayItems from "./components/DisplayItems";
 import supabase from "./config/supabaseConfig";
 import { BiSort } from "react-icons/bi";
 import OpenAiVision from "./components/OpenAiVision";
+import Component from "./components/Component";
+
+const siteId = import.meta.env.VITE_HOTJAR_SITE_ID;
+const hotjarVersion = 6;
+
+Hotjar.init(siteId, hotjarVersion);
 
 interface Item {
   id: number;
   name: string;
   quantity: number;
 }
-
-// DB PASSWORD: ZYHz4$4SRkM4YWY
 
 function App() {
   const [items, setItems] = useState<Item[]>([]);
@@ -126,8 +131,6 @@ function App() {
       />
 
       {!error && <AddItemModal addItem={handleAdd} />}
-
-      <OpenAiVision />
     </>
   );
 }
